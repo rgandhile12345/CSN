@@ -1,0 +1,23 @@
+# Name of the workflow
+name: Run streamlit job
+# Triggers for workflows
+on:
+    # Event based trigger
+    push: 
+        branches: 
+        - main
+    # time based trigger
+    schedule:
+    - cron: '*/5 * * * *'
+# define the tasks
+jobs:
+    # Job Name
+    streamlit-job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout Code
+          uses: actions/checkout@v2
+
+
+        - name: Setup Python
+          run: echo ‘welcome…’
